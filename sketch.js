@@ -8,6 +8,7 @@ function draw() {
 
 if (mouseIsPressed){
   line(mouseX, mouseY, pmouseX, pmouseY);
+  line(width - mouseX, height - mouseY, width - pmouseX, height - pmouseY);
 }
 
 }
