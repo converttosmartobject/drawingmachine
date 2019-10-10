@@ -3,7 +3,7 @@ let strokeWidth = 6;
 
 function setup() {
   createCanvas(800, 800);
-  background(0);
+  drawGrid();
 
 }
 
@@ -28,5 +28,11 @@ if (key === 's'){
 }
 
 return false;
+}
 
+function drawGrid(){
+  numCells = 20;
+  for(let i = 0; i <= width; i += width / numCells){
+    rect(i, 50, width / numCells, height / numCells);
+  }
 }
