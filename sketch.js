@@ -1,3 +1,4 @@
+let array = [];
 let noiseOffset = 0.0;
 let strokeWidth = 6;
 
@@ -14,9 +15,10 @@ noiseOffset += 0.08;
 strokeWidth = noise(noiseOffset) * 100;
 
 if (mouseIsPressed){
-  stroke(map(mouseX, 0, 600, 0, 255, true))
+  //stroke(map(mouseX, 0, 600, 0, 255, true))
   line(mouseX, mouseY, pmouseX, pmouseY);
-  line(width - mouseX, height - mouseY, width - pmouseX, height - pmouseY);
+  array.push([mouseX, mouseY]);
+  // line(width - mouseX, height - mouseY, width - pmouseX, height - pmouseY);
 }
 
 }
@@ -24,7 +26,12 @@ if (mouseIsPressed){
 function keyTyped(){
 
 if (key === 's'){
+  //save thie image
   saveCanvas('wOW - a Masterpiece', 'png');
+} else if (key === 'd'){
+  //display this image
+  console.log(array);
+
 }
 
 return false;
