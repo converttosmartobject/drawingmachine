@@ -24,7 +24,7 @@ if (mouseIsPressed){
 function keyTyped(){
 
 if (key === 's'){
-  saveCanvas('fileName', 'png');
+  saveCanvas('wOW - a Masterpiece', 'png');
 }
 
 return false;
@@ -46,5 +46,4 @@ function drawGrid(){
       fill(fillColor);
     }
   }
-  strokeWeight(strokeWidth);
 }
