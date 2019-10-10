@@ -33,6 +33,7 @@ return false;
 function drawGrid(){
   numCells = 20;
   fillColor = 207;
+  noStroke();
 
   for(let i = 0; i <= width; i += width / numCells){
     for (let j = 0; j <= height; j += height / numCells) {
