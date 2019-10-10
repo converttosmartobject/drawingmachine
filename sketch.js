@@ -32,7 +32,7 @@ if (key === 's'){
   //display this image
 
 for (let i = 0; i < array.length; i++){
-  line(array[i][0], array[i][1], array[1][0], array[1][1]);
+  line(array[i][0], array[i][1], array[i + 1][0], array[i + 1][1]);
 }
 
 
