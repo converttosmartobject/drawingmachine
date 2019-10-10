@@ -31,7 +31,7 @@ if (key === 's'){
 } else if (key === 'd'){
   //display this image
 
-for (let i = 0; i < array.length; i++){
+for (let i = 0; i < array.length - 1; i++){
   line(array[i][0], array[i][1], array[i + 1][0], array[i + 1][1]);
 }
 
