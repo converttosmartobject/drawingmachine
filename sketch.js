@@ -30,7 +30,7 @@ if (key === 's'){
   saveCanvas('wOW - a Masterpiece', 'png');
 } else if (key === 'd'){
   //display this image
-  console.log(array);
+  line(array[0][0], array[0][1], array[1][0], array[1][1])
 
 }
 
