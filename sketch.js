@@ -15,8 +15,13 @@ strokeWidth = noise(noiseOffset) * 100;
 
 if (mouseIsPressed){
   stroke(map(mouseX, 0, 600, 0, 255, true))
-  line(mouseX, mouseY, pmouseX, pmouseY);
+ line(mouseX, mouseY, pmouseX, pmouseY);
+  // line(mouseX, mouseY, mouseY, mouseX);
+  // line(mouseX, mouseY, pmouseY, pmouseX);
+  // line(pmouseX, pmouseY, mouseX, mouseY);
   line(width - mouseX, height - mouseY, width - pmouseX, height - pmouseY);
+  // line(mouseX, mouseY, width + pmouseX, height + pmouseY);
+
 }
 
 }
