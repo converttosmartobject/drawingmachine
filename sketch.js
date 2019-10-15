@@ -1,37 +1,54 @@
-let noiseOffset = 0.0;
-let strokeWidth = 6;
+let theta;
 
 function setup() {
-  createCanvas(800, 800);
-  background(0);
-
+  createCanvas(500, 500);
+  background(0, 255, 0);
 }
 
 function draw() {
-strokeWeight(strokeWidth);
+  strokeWeight(2);
+  frameRate(10);
 
-noiseOffset += 0.08;
-strokeWidth = noise(noiseOffset) * 100;
+  if (mouseIsPressed) {
+    stroke(map(mouseY, 0, 600, 0, 255, true))
+    line(mouseX, mouseY, pmouseX, pmouseY);
+     // line(width - mouseX, height - mouseY, width - pmouseX, height - pmouseY);
+  }
 
-if (mouseIsPressed){
-  stroke(map(mouseX, 0, 600, 0, 255, true))
- line(mouseX, mouseY, pmouseX, pmouseY);
-  // line(mouseX, mouseY, mouseY, mouseX);
-  // line(mouseX, mouseY, pmouseY, pmouseX);
-  // line(pmouseX, pmouseY, mouseX, mouseY);
-  line(width - mouseX, height - mouseY, width - pmouseX, height - pmouseY);
-  // line(mouseX, mouseY, width + pmouseX, height + pmouseY);
+  let a = (mouseX) * (mouseY);
+  theta = radians(a);
+  translate(mouseX, mouseY);
+  line(10,10,10,10);
+  branch(50);
 
 }
 
+function branch(h) {
+
+  h *= 0.66;
+
+  if (h > 2) {
+    push();
+    rotate(theta);
+    line(0, 0, 0, -h);
+    translate(h, -h);
+    branch(2);
+    pop();
+
+    push();
+    rotate(-theta);
+    line(0, 0, 0, -h);
+    translate(0, -h);
+    branch(h);
+    pop();
+  }
 }
 
-function keyTyped(){
+function keyTyped() {
 
-if (key === 's'){
-  saveCanvas('wOW - a Masterpiece', 'png');
-}
-
-return false;
+  if (key === 's') {
+    saveCanvas('wOW - a Masterpiece', 'png');
+  }
+  return false;
 
 }
