@@ -3,7 +3,7 @@ html, body {
   padding: 10px;
   font-family: "Courier New", Courier, monospace;
   color: black;
-  justify-content: center;
+  text-align: center;
 }
 canvas {
   display: block;
