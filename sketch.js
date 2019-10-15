@@ -1,7 +1,7 @@
 let theta;
 
 function setup() {
-  createCanvas(800, 1000);
+  createCanvas(2000, 500);
   background(0, 255, 0);
 }
 
